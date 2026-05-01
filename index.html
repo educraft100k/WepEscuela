@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Frutas Alegres - by eduxz_gx 🌱</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="assets/css/base.css"/>
+  <link rel="stylesheet" href="assets/css/navbar.css"/>
+  <link rel="stylesheet" href="assets/css/hero.css"/>
+  <link rel="stylesheet" href="assets/css/modal.css"/>
+  <link rel="stylesheet" href="assets/css/sections.css"/>
+  <link rel="stylesheet" href="assets/css/responsive.css"/>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="nav-inner">
+      <div class="nav-logo">Frutas Alegres</div>
+      <button class="nav-hamburger" id="navHamburger" aria-label="Menú">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#nosotros">Nosotros</a></li>
+        <li><a href="#productos">Productos</a></li>
+        <li><a href="#proceso">Proceso</a></li>
+        <li><a href="#temporada">Temporada</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+        <li><a href="#info">Información</a></li>
+      </ul>
+      <button class="nav-cta">Contactar</button>
+    </div>
+  </nav>
+
+  <section class="hero" id="inicio">
+    <div class="hero-text">
+      <span class="hero-tag">Naturaleza · Frescura · Bienestar</span>
+      <h1>Frutas<br/><em>Alegres</em></h1>
+      <p class="hero-sub">Sabores naturales que nutren el alma.<br/>Del campo directo a tu mesa.</p>
+      <a href="#productos" class="btn-primary">Ver Productos</a>
+    </div>
+    <div class="hero-grid">
+      <div class="hero-img hero-img-1">
+        <img src="imagenes/JugoNaranja.png" alt="jugo naranja"/>
+        <div class="img-label">Jugos Frescos</div>
+      </div>
+      <div class="hero-img hero-img-2">
+        <img src="imagenes/FrutasFoto.png" alt="frutas mix"/>
+        <div class="img-label">Frutas del dia</div>
+      </div>
+      <div class="hero-img hero-img-3">
+        <img src="imagenes/FresaMalteada.png" alt="smoothie"/>
+        <div class="img-label">Malteadas</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="marquee-wrap">
+    <div class="marquee">
+      <span>Naranjas · Mangos · Fresas · Piñas · Uvas · Melones · Kiwis · Papayas · Sandías · Limones · </span>
+      <span>Naranjas · Mangos · Fresas · Piñas · Uvas · Melones · Kiwis · Papayas · Sandías · Limones · </span>
+    </div>
+  </div>
+
+  <section class="about" id="nosotros">
+    <div class="about-inner">
+      <div class="about-img-wrap">
+        <img src="Imagenes/SobreNosotros.png" alt="frutas coloridas" class="about-img"/>
+        <div class="about-badge">
+          <span class="badge-num">100%</span>
+          <span class="badge-txt">Natural</span>
+        </div>
+      </div>
+      <div class="about-text">
+        <span class="section-tag">Sobre Nosotros</span>
+        <h2>Una historia de <em>frescura</em> y pasión</h2>
+        <p>En <strong>Frutas Alegres</strong> creemos que comer bien es un acto de amor propio. Seleccionamos cada fruta directamente de productores locales comprometidos con prácticas sostenibles y respetuosas con el medio ambiente.</p>
+        <p>Nuestra misión es llevarte lo mejor de la naturaleza con la calidad que mereces: productos frescos, nutritivos y llenos de sabor, listos para transformar tu día en algo extraordinario.</p>
+        <div class="about-stats">
+          <div class="stat">
+            <span class="stat-num">50+</span>
+            <span class="stat-label">Frutas</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num">5</span>
+            <span class="stat-label">Años de experiencia</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num">500+</span>
+            <span class="stat-label">Clientes felices</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="products" id="productos">
+    <div class="products-header">
+      <span class="section-tag">Nuestros Productos</span>
+      <h2>Lo Mejor En Cada <em>Temporada</em></h2>
+      <p>Cada producto es cuidadosamente seleccionado para garantizar lo mejor para ti y tu familia 🍇..</p>
+    </div>
+    <div class="products-grid" id="productsGrid"></div>
+  </section>
+
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal" id="productModal">
+      <button class="modal-close" id="modalClose">&times;</button>
+      <div class="modal-img-wrap">
+        <img id="modalImg" src="" alt=""/>
+      </div>
+      <div class="modal-body">
+        <span class="modal-tag" id="modalTag"></span>
+        <h3 id="modalName"></h3>
+        <p id="modalDesc"></p>
+        <div class="modal-benefits" id="modalBenefits"></div>
+        <div class="modal-price-row">
+          <div class="modal-price" id="modalPrice"></div>
+          <div class="modal-qty">
+            <button class="qty-btn" id="qtyMinus">−</button>
+            <span class="qty-num" id="qtyNum">1</span>
+            <button class="qty-btn" id="qtyPlus">+</button>
+          </div>
+        </div>
+        <button class="btn-primary btn-full" id="addToCart">Agregar al carrito</button>
+        <p class="modal-note">* Solo presentación escolar — sin transacción real</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="cart-toast" id="cartToast">
+    <span class="toast-icon">🛒</span>
+    <span id="toastMsg">Producto agregado</span>
+  </div>
+
+  <section class="info" id="info">
+    <div class="info-inner">
+      <span class="section-tag">Información</span>
+      <h2>¿Por qué elegirnos?</h2>
+      <div class="info-cards">
+        <div class="info-card">
+          <div class="info-icon">🌿</div>
+          <h4>100% Natural</h4>
+          <p>Sin conservantes, sin colorantes artificiales. Solo lo que la naturaleza ofrece en su mejor momento.</p>
+        </div>
+        <div class="info-card">
+          <div class="info-icon">🚚</div>
+          <h4>Entrega Rápida</h4>
+          <p>Recibe tus frutas frescas en menos de 24 horas directamente en la puerta de tu hogar.</p>
+        </div>
+        <div class="info-card">
+          <div class="info-icon">🌱</div>
+          <h4>Sostenible</h4>
+          <p>Trabajamos con agricultores locales que practican una agricultura responsable y ecológica.</p>
+        </div>
+        <div class="info-card">
+          <div class="info-icon">💎</div>
+          <h4>Calidad Premium</h4>
+          <p>Cada fruta pasa por un riguroso proceso de selección para garantizarte lo mejor.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="juice-banner">
+    <div class="juice-grid">
+      <div class="juice-item">
+        <img src="Imagenes/Jugos/JugoNaranja2.png" alt="jugo de Naranja"/>
+      </div>
+      <div class="juice-item juice-center">
+        <h2>Jugos<br/><em>Naturales⛅<br/></h2>
+        <p>Tenemos una gran variedad de Jugos y malteadas , Preparadas al momento con la fruta más fresca, sin azúcar añadida ni conservantes.</p>
+        <a href="#productos" class="btn-outline">Explorar</a>
+      </div>
+      <div class="juice-item">
+        <img src="Imagenes/Jugos/JugoPiña.png" alt="jugo de piña"/>
+      </div>
+    </div>
+  </section>
+
+  <section class="proceso" id="proceso">
+    <div class="proceso-inner">
+      <div class="proceso-header reveal">
+        <span class="section-tag">Cómo trabajamos</span>
+        <h2>Del campo a tu <em>mesa</em></h2>
+        <p>Un proceso cuidadoso que garantiza la calidad en cada etapa.</p>
+      </div>
+      <div class="proceso-steps">
+        <div class="proceso-step reveal">
+          <div class="paso-num">01</div>
+          <div class="paso-img">
+            <img src="Imagenes/Proceso/Trabajadores.png" alt="campo"/>
+          </div>
+          <div class="paso-body">
+            <h4>Selección en Campo</h4>
+            <p>Visitamos a nuestros agricultores aliados y elegimos personalmente cada fruta en su punto óptimo de madurez, garantizando el sabor y la nutrición máxima.</p>
+          </div>
+        </div>
+        <div class="proceso-step reveal" style="transition-delay:0.1s">
+          <div class="paso-num">02</div>
+          <div class="paso-img">
+            <img src="Imagenes/Proceso/Limpieza.png" alt="limpieza"/>
+          </div>
+          <div class="paso-body">
+            <h4>Limpieza & Control</h4>
+            <p>Cada lote pasa por un proceso de higienización y control de calidad donde descartamos cualquier pieza que no cumpla nuestros estándares premium.</p>
+          </div>
+        </div>
+        <div class="proceso-step reveal" style="transition-delay:0.2s">
+          <div class="paso-num">03</div>
+          <div class="paso-img">
+            <img src="Imagenes/Proceso/Biodegradables.png" alt="empaque"/>
+          </div>
+          <div class="paso-body">
+            <h4>Empaque Eco</h4>
+            <p>Empacamos con materiales biodegradables que mantienen la frescura y minimizan el impacto ambiental. Listos para llegar perfectos hasta tu puerta.</p>
+          </div>
+        </div>
+        <div class="proceso-step reveal" style="transition-delay:0.3s">
+          <div class="paso-num">04</div>
+          <div class="paso-img">
+            <img src="Imagenes/Proceso/Repartir.png" alt="entrega"/>
+          </div>
+          <div class="paso-body">
+            <h4>Entrega Express</h4>
+            <p>Nuestro equipo de reparto en menos de 24 horas lleva tu pedido directo a casa con toda la frescura del primer día.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="temporada" id="temporada">
+    <div class="temp-inner">
+      <div class="temp-text reveal">
+        <span class="section-tag">Calendario</span>
+        <h2>Frutas de <em>temporada</em></h2>
+        <p>Cada estación tenemos mucha variedades de frutas, super frescas para esa temporada especial...</p>
+      </div>
+      <div class="temp-grid">
+        <div class="temp-card reveal">
+          <div class="temp-season">🌸 Primavera</div>
+          <ul class="temp-list">
+            <li><span class="temp-dot"></span>Fresa</li>
+            <li><span class="temp-dot"></span>Cereza</li>
+            <li><span class="temp-dot"></span>Mango</li>
+            <li><span class="temp-dot"></span>Papaya</li>
+          </ul>
+          <div class="temp-img">
+            <img src="Imagenes/Estaciones/Primavera.png" alt="primavera"/>
+          </div>
+        </div>
+        <div class="temp-card reveal" style="transition-delay:0.1s">
+          <div class="temp-season">☀️ Verano</div>
+          <ul class="temp-list">
+            <li><span class="temp-dot"></span>Sandía</li>
+            <li><span class="temp-dot"></span>Melón</li>
+            <li><span class="temp-dot"></span>Durazno</li>
+            <li><span class="temp-dot"></span>Piña</li>
+          </ul>
+          <div class="temp-img">
+            <img src="Imagenes/Estaciones/Verano.png" alt="verano"/>
+          </div>
+        </div>
+        <div class="temp-card reveal" style="transition-delay:0.2s">
+          <div class="temp-season">🍂 Otoño</div>
+          <ul class="temp-list">
+            <li><span class="temp-dot"></span>Uva</li>
+            <li><span class="temp-dot"></span>Higo</li>
+            <li><span class="temp-dot"></span>Granada</li>
+            <li><span class="temp-dot"></span>Manzana</li>
+          </ul>
+          <div class="temp-img">
+            <img src="Imagenes/Estaciones/Otoño.png" alt="otoño"/>
+          </div>
+        </div>
+        <div class="temp-card reveal" style="transition-delay:0.3s">
+          <div class="temp-season">❄️ Invierno</div>
+          <ul class="temp-list">
+            <li><span class="temp-dot"></span>Naranja</li>
+            <li><span class="temp-dot"></span>Mandarina</li>
+            <li><span class="temp-dot"></span>Kiwi</li>
+            <li><span class="temp-dot"></span>Toronja</li>
+          </ul>
+          <div class="temp-img">
+            <img src="Imagenes/Estaciones/Invierno.png" alt="invierno"/>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="testimonios">
+    <div class="test-inner">
+      <div class="test-header reveal">
+        <span class="section-tag">Clientes</span>
+        <h2>Lo que dicen de <em>nosotros</em></h2>
+      </div>
+      <div class="test-grid">
+        <div class="test-card reveal">
+          <div class="test-stars">★★★★★</div>
+          <p class="test-quote">"Las frutas llegan increíblemente frescas. El mango ataulfo era el más dulce que he probado en años. Sin duda mi tienda favorita."</p>
+          <div class="test-author">
+            <div class="test-avatar">MR</div>
+            <div>
+              <span class="test-name">María Rodríguez</span>
+              <span class="test-role">Cliente frecuente</span>
+            </div>
+          </div>
+        </div>
+        <div class="test-card reveal" style="transition-delay:0.1s">
+          <div class="test-stars">★★★★★</div>
+          <p class="test-quote">"Pedí una caja surtida y quedé fascinado. Todo en perfecto estado, bien empacado y llegó a tiempo. La calidad es notablemente superior."</p>
+          <div class="test-author">
+            <div class="test-avatar">CL</div>
+            <div>
+              <span class="test-name">Carlos López</span>
+              <span class="test-role">Cliente frecuente</span>
+            </div>
+          </div>
+        </div>
+        <div class="test-card reveal" style="transition-delay:0.2s">
+          <div class="test-stars">★★★★★</div>
+          <p class="test-quote">"Me encanta saber que las frutas son cosechadas con tanto amor. El sabor es increíble me encanta!!"</p>
+          <div class="test-author">
+            <div class="test-avatar">SG</div>
+            <div>
+              <span class="test-name">Eduardo García</span>
+              <span class="test-role">Estudiante</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contacto" id="contacto">
+    <div class="contact-inner">
+      <div class="contact-text reveal">
+        <span class="section-tag">Contacto</span>
+        <h2>Hablemos sobre <em>tu pedido</em></h2>
+        <p>¿Tienes dudas, quieres hacer un pedido especial o simplemente quieres saludarnos? Estamos aquí para ti.</p>
+        <div class="contact-items">
+          <div class="contact-item">
+            <span class="contact-icon">📍</span>
+            <div>
+              <span class="contact-label">Ubicación</span>
+              <span class="contact-val">Xalapa Veracruz</span>
+            </div>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon">📞</span>
+            <div>
+              <span class="contact-label">Teléfono</span>
+              <span class="contact-val">+52 676 767 6767</span>
+            </div>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon">✉️</span>
+            <div>
+              <span class="contact-label">Correo</span>
+              <span class="contact-val">frutasalegres@gmail.com</span>
+            </div>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon">🕐</span>
+            <div>
+              <span class="contact-label">Horario</span>
+              <span class="contact-val">Lun – Sáb · 8:00 am – 7:00 pm</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="contact-form reveal" style="transition-delay:0.15s">
+        <div class="form-group">
+          <label>Nombre completo</label>
+          <input type="text" placeholder="Tu nombre" readonly/>
+        </div>
+        <div class="form-group">
+          <label>Correo electrónico</label>
+          <input type="email" placeholder="correo@ejemplo.com" readonly/>
+        </div>
+        <div class="form-group">
+          <label>Mensaje</label>
+          <textarea placeholder="¿En qué podemos ayudarte?" rows="5" readonly></textarea>
+        </div>
+        <button class="btn-primary btn-full" onclick="showToastContact()">Enviar mensaje</button>
+        <p class="modal-note" style="margin-top:12px">* Menu solo de decoración</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="nav-logo">Frutas Alegres 🌱</div>
+        <p>Del campo a tu mesa,<br/>con amor y frescura.</p>
+      </div>
+      <div class="footer-links">
+        <h5>Navegación</h5>
+        <a href="#inicio">Inicio</a>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#productos">Productos</a>
+        <a href="#proceso">Proceso</a>
+        <a href="#temporada">Temporada</a>
+        <a href="#contacto">Contacto</a>
+        <a href="#info">Información</a>
+      </div>
+      <div class="footer-contact">
+        <h5>Contacto</h5>
+        <p>frutasalegres@gmail.com</p>
+        <p>+52 676 767 6767</p>
+        <p>Nexus Team - 2025-2026</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <img src="imagenes/NexusTeam.png" alt="Nexus" style="width:90px; height:auto;">
+      <p>©️ 2026 NexusTeam 🪷· Eduardo Garcia Rivas</p>
+      <p>©️ Todos Los Derechos Reservados</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/data/products.js"></script>
+  <script src="assets/js/ui/toast.js"></script>
+  <script src="assets/js/ui/modal.js"></script>
+  <script src="assets/js/ui/navbar.js"></script>
+  <script src="assets/js/ui/reveal.js"></script>
+  <script src="assets/js/main.js"></script>
+
+</body>
+</html>
