@@ -31,7 +31,7 @@ const products = [
     category: "Tropicales",
     price: "$45 / pieza",
     tag: "Popular",
-    img: "imagenes/Modal/piña.png",
+    img: "imagenes/Modal/Piña.png",
     desc: "La piña Golden es más dulce y menos ácida que otras variedades. Contiene bromelina, una enzima que ayuda a la digestión y tiene propiedades antiinflamatorias.",
     benefits: ["Bromelina", "Digestiva", "Vitamina C", "Antiinflamatoria"]
   },
@@ -40,7 +40,7 @@ const products = [
     category: "Uvas",
     price: "$60 / kg",
     tag: "Especial",
-    img: "imagenes/Modal/uvas.png",
+    img: "imagenes/Modal/Uvas.png",
     desc: "Las uvas verdes son jugosas y ligeramente ácidas. Contienen antioxidantes y vitamina K, que ayudan a la salud ósea y cardiovascular. Son ideales como snack o en ensaladas.",
     benefits: ["Vitamina K", "Antioxidante", "Salud ósea", "Hidratante"]
   },
