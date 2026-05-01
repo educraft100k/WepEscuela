@@ -65,15 +65,25 @@ JavaScript — Interactividad dinámica
 
 📂 Estructura
 
-FrutasAlegres/
-│
+frutas-alegres/
+
+├── index.html
 ├── assets/
 │   ├── css/
-│   ├── js/
-│   └── img/
-│
-├── imagenes/
-├── index.html
-└── README.md
+│   │   ├── base.css
+│   │   ├── navbar.css
+│   │   ├── hero.css
+│   │   ├── sections.css
+│   │   ├── modal.css
+│   │   └── responsive.css
+│   └── js/
+│       ├── data/
+│       │   └── products.js
+│       ├── ui/
+│       │   ├── navbar.js
+│       │   ├── modal.js
+│       │   ├── toast.js
+│       │   └── reveal.js
+│       └── main.js
 
 > 🌾 Organización pensada para escalar fácilmente.
